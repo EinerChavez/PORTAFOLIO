@@ -1,0 +1,650 @@
+---
+// Contact Section - Formulario Cósmico
+---
+
+<section id="contacto" class="contact-section">
+	<div class="container">
+		<h2 class="section-title" data-es="Contacto" data-en="Contact">Contacto</h2>
+		<p class="section-subtitle" data-es="Envíame un mensaje" data-en="Send me a message">Envíame un mensaje</p>
+		
+		<div class="contact-content">
+			<div class="contact-info">
+				<a href="mailto:einercha32@gmail.com" class="info-card">
+					<div class="info-icon">
+						<div class="icon-glow"></div>
+						📧
+					</div>
+					<div>
+						<h3>Email</h3>
+						<p>einercha32@gmail.com</p>
+					</div>
+				</a>
+				
+				<div class="info-card">
+					<div class="info-icon">
+						<div class="icon-glow"></div>
+						🌍
+					</div>
+					<div>
+						<h3 data-es="Ubicación" data-en="Location">Ubicación</h3>
+						<p data-es="Colombia" data-en="Colombia">Colombia</p>
+					</div>
+				</div>
+				
+				<a href="https://www.linkedin.com/in/einer-chavez-688733282/" target="_blank" class="info-card">
+					<div class="info-icon">
+						<div class="icon-glow"></div>
+						💼
+					</div>
+					<div>
+						<h3>LinkedIn</h3>
+						<p data-es="Conecta conmigo" data-en="Connect with me">Conecta conmigo</p>
+					</div>
+				</a>
+				
+				<div class="info-card">
+					<div class="info-icon">
+						<div class="icon-glow"></div>
+						📱
+					</div>
+					<div>
+						<h3>WhatsApp</h3>
+						<p>+51 987 654 321</p>
+						<a href="https://wa.me/51987654321" target="_blank" class="whatsapp-btn">
+							<span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<form class="cosmic-form" id="contactForm">
+				<div class="form-group">
+					<div class="input-container">
+						<input type="text" id="nombre" name="nombre" required>
+						<label for="nombre" data-es="Tu Nombre" data-en="Your Name">Tu Nombre</label>
+						<div class="input-glow"></div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="input-container">
+						<input type="email" id="email" name="email" required>
+						<label for="email" data-es="Tu Email" data-en="Your Email">Tu Email</label>
+						<div class="input-glow"></div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="input-container">
+						<input type="text" id="asunto" name="asunto" required>
+						<label for="asunto" data-es="Asunto" data-en="Subject">Asunto</label>
+						<div class="input-glow"></div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="input-container textarea-container">
+						<textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+						<label for="mensaje" data-es="Tu Mensaje" data-en="Your Message">Tu Mensaje</label>
+						<div class="input-glow"></div>
+					</div>
+				</div>
+				
+				<button type="submit" class="submit-btn">
+					<span class="btn-text" data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>
+					<div class="btn-particles"></div>
+					<div class="btn-explosion"></div>
+				</button>
+			</form>
+		</div>
+		
+		<div class="success-message" id="successMessage">
+			<div class="success-icon">✨</div>
+			<h3 data-es="¡Mensaje Enviado!" data-en="Message Sent!">¡Mensaje Enviado!</h3>
+			<p data-es="Tu mensaje ha sido enviado exitosamente" data-en="Your message has been sent successfully">Tu mensaje ha sido enviado exitosamente</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact-section {
+		min-height: 90vh;
+		padding: 60px 20px 40px;
+		display: flex;
+		align-items: center;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.section-title {
+		font-size: 3rem;
+		text-align: center;
+		margin-bottom: 20px;
+		background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: glow-pulse 2s ease-in-out infinite alternate;
+	}
+
+	.section-subtitle {
+		text-align: center;
+		font-size: 1.2rem;
+		color: var(--text-secondary);
+		margin-bottom: 80px;
+	}
+
+	.contact-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: start;
+	}
+
+	.contact-info {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		height: fit-content;
+	}
+
+	.info-card {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		background: var(--card-bg);
+		backdrop-filter: blur(20px);
+		border: 1px solid var(--border-color);
+		border-radius: 15px;
+		padding: 25px;
+		transition: all 0.3s ease;
+		animation: slide-in-left 0.8s ease-out both;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.info-card:nth-child(2) { animation-delay: 0.2s; }
+	.info-card:nth-child(3) { animation-delay: 0.4s; }
+
+	@keyframes slide-in-left {
+		0% {
+			opacity: 0;
+			transform: translateX(-50px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.info-card:hover {
+		transform: translateX(15px) scale(1.02);
+		box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+		border-color: rgba(255, 107, 157, 0.5);
+		animation: info-card-pulse 1.5s ease-in-out infinite;
+	}
+
+	@keyframes info-card-pulse {
+		0%, 100% { transform: translateX(15px) scale(1.02); }
+		50% { transform: translateX(18px) scale(1.03); }
+	}
+
+	.info-icon {
+		position: relative;
+		width: 60px;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.8rem;
+		background: linear-gradient(45deg, var(--accent-primary), #0080ff);
+		border-radius: 50%;
+		box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+	}
+
+	.icon-glow {
+		position: absolute;
+		top: -5px;
+		left: -5px;
+		right: -5px;
+		bottom: -5px;
+		background: radial-gradient(circle, rgba(0, 245, 255, 0.3), transparent);
+		border-radius: 50%;
+		animation: icon-pulse 2s ease-in-out infinite;
+	}
+
+	@keyframes icon-pulse {
+		0%, 100% { transform: scale(1); opacity: 0.5; }
+		50% { transform: scale(1.2); opacity: 0.8; }
+	}
+
+	.info-card h3 {
+		font-family: 'Orbitron', monospace;
+		color: var(--accent-primary);
+		margin-bottom: 5px;
+		font-size: 1.1rem;
+	}
+
+	.info-card p {
+		color: var(--text-secondary);
+		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	.whatsapp-btn {
+		display: inline-block;
+		background: linear-gradient(45deg, #25D366, #128C7E);
+		color: white;
+		padding: 8px 16px;
+		border-radius: 20px;
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-weight: 600;
+		font-family: 'Orbitron', monospace;
+		transition: all 0.3s ease;
+		margin-top: 5px;
+	}
+
+	.whatsapp-btn:hover {
+		transform: translateY(-2px) scale(1.05);
+		box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+		background: linear-gradient(45deg, #128C7E, #25D366);
+	}
+
+	.cosmic-form {
+		background: var(--card-bg);
+		backdrop-filter: blur(20px);
+		border: 1px solid var(--border-color);
+		border-radius: 20px;
+		padding: 40px;
+		animation: slide-in-right 0.8s ease-out both;
+		position: relative;
+		overflow: hidden;
+		height: fit-content;
+	}
+
+	.cosmic-form::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.1), rgba(255, 107, 157, 0.05), transparent);
+		transition: left 1s ease;
+	}
+
+	.cosmic-form:hover::before {
+		left: 100%;
+	}
+
+	@keyframes slide-in-right {
+		0% {
+			opacity: 0;
+			transform: translateX(50px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.form-group {
+		margin-bottom: 30px;
+	}
+
+	.input-container {
+		position: relative;
+	}
+
+	.input-container input,
+	.input-container textarea {
+		width: 100%;
+		padding: 15px 20px;
+		background: rgba(0, 0, 0, 0.3);
+		border: 2px solid var(--border-color);
+		border-radius: 10px;
+		color: var(--text-primary);
+		font-size: 1rem;
+		font-family: 'Exo 2', sans-serif;
+		transition: all 0.3s ease;
+		outline: none;
+	}
+
+	.input-container label {
+		position: absolute;
+		top: 15px;
+		left: 20px;
+		color: var(--text-secondary);
+		font-size: 1rem;
+		transition: all 0.3s ease;
+		pointer-events: none;
+		font-family: 'Orbitron', monospace;
+	}
+
+	.input-container input:focus,
+	.input-container textarea:focus,
+	.input-container input:valid,
+	.input-container textarea:valid {
+		border-color: var(--accent-primary);
+		box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+	}
+
+	.input-container input:focus + label,
+	.input-container textarea:focus + label,
+	.input-container input:valid + label,
+	.input-container textarea:valid + label {
+		top: -10px;
+		left: 15px;
+		font-size: 0.8rem;
+		color: var(--accent-primary);
+		background: var(--card-bg);
+		padding: 0 8px;
+		border-radius: 5px;
+	}
+
+	.input-glow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(45deg, transparent, rgba(0, 245, 255, 0.2), transparent);
+		border-radius: 10px;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		pointer-events: none;
+	}
+
+	.input-container:focus-within .input-glow {
+		opacity: 1;
+		animation: input-pulse 2s ease-in-out infinite, input-sparkle 3s ease-in-out infinite;
+	}
+
+	@keyframes input-sparkle {
+		0%, 100% { box-shadow: 0 0 0 rgba(0, 245, 255, 0); }
+		50% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.4), inset 0 0 20px rgba(255, 107, 157, 0.2); }
+	}
+
+	@keyframes input-pulse {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.02); }
+	}
+
+	.textarea-container textarea {
+		resize: vertical;
+		min-height: 120px;
+	}
+
+	.submit-btn {
+		width: 100%;
+		padding: 18px;
+		background: linear-gradient(45deg, var(--accent-primary), #0080ff);
+		color: var(--bg-primary);
+		border: none;
+		border-radius: 50px;
+		font-size: 1.1rem;
+		font-weight: bold;
+		font-family: 'Orbitron', monospace;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+		transition: all 0.3s ease;
+	}
+
+	.submit-btn:hover {
+		transform: translateY(-5px) scale(1.02);
+		box-shadow: 0 20px 50px rgba(0, 245, 255, 0.5);
+		animation: submit-hover-glow 1s ease-in-out infinite alternate;
+	}
+
+	@keyframes submit-hover-glow {
+		0% { box-shadow: 0 20px 50px rgba(0, 245, 255, 0.5); }
+		100% { box-shadow: 0 25px 60px rgba(255, 107, 157, 0.6); }
+	}
+
+	.btn-particles {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: radial-gradient(2px 2px at 20% 50%, #fff, transparent),
+					radial-gradient(2px 2px at 80% 50%, #fff, transparent),
+					radial-gradient(1px 1px at 40% 30%, #fff, transparent),
+					radial-gradient(1px 1px at 60% 70%, #fff, transparent);
+		opacity: 0;
+		animation: btn-sparkle 2s ease-in-out infinite;
+	}
+
+	.submit-btn:hover .btn-particles {
+		opacity: 0.6;
+	}
+
+	@keyframes btn-sparkle {
+		0%, 100% { opacity: 0; transform: scale(1); }
+		50% { opacity: 0.8; transform: scale(1.1); }
+	}
+
+	.btn-explosion {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 0;
+		height: 0;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 0.4s ease;
+	}
+
+	.submit-btn.clicked .btn-explosion {
+		width: 200px;
+		height: 200px;
+		opacity: 0;
+	}
+
+	.success-message {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0);
+		background: var(--card-bg);
+		backdrop-filter: blur(20px);
+		border: 2px solid var(--accent-primary);
+		border-radius: 20px;
+		padding: 40px;
+		text-align: center;
+		z-index: 1000;
+		transition: all 0.5s ease;
+		box-shadow: 0 0 50px rgba(0, 245, 255, 0.5);
+	}
+
+	.success-message.show {
+		transform: translate(-50%, -50%) scale(1);
+		animation: success-appear 0.8s ease-out, success-float 2s ease-in-out infinite 0.8s;
+	}
+
+	@keyframes success-appear {
+		0% { 
+			transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+			opacity: 0;
+		}
+		50% {
+			transform: translate(-50%, -50%) scale(1.1) rotate(-90deg);
+			opacity: 0.8;
+		}
+		100% { 
+			transform: translate(-50%, -50%) scale(1) rotate(0deg);
+			opacity: 1;
+		}
+	}
+
+	@keyframes success-float {
+		0%, 100% { transform: translate(-50%, -50%) scale(1) translateY(0); }
+		50% { transform: translate(-50%, -50%) scale(1) translateY(-10px); }
+	}
+
+	.success-icon {
+		font-size: 3rem;
+		margin-bottom: 20px;
+		animation: success-bounce 1s ease-in-out infinite alternate;
+	}
+
+	@keyframes success-bounce {
+		0% { transform: scale(1); }
+		100% { transform: scale(1.2); }
+	}
+
+	.success-message h3 {
+		color: var(--accent-primary);
+		font-family: 'Orbitron', monospace;
+		margin-bottom: 10px;
+		font-size: 1.5rem;
+	}
+
+	.success-message p {
+		color: var(--text-secondary);
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.contact-section {
+			padding: 40px 15px 30px;
+		}
+
+		.contact-content {
+			grid-template-columns: 1fr;
+			gap: 30px;
+			align-items: stretch;
+		}
+
+		.section-title {
+			font-size: 2rem;
+		}
+
+		.section-subtitle {
+			font-size: 1.1rem;
+			margin-bottom: 60px;
+		}
+
+		.cosmic-form {
+			padding: 25px 20px;
+			height: auto;
+		}
+
+		.info-card {
+			padding: 20px 15px;
+		}
+
+		.info-card h3 {
+			font-size: 1rem;
+		}
+
+		.info-card p {
+			font-size: 0.9rem;
+		}
+
+		.info-icon {
+			width: 45px;
+			height: 45px;
+			font-size: 1.3rem;
+		}
+
+		.input-container input,
+		.input-container textarea {
+			padding: 12px 15px;
+			font-size: 0.9rem;
+		}
+
+		.input-container label {
+			font-size: 0.9rem;
+		}
+
+		.submit-btn {
+			padding: 15px;
+			font-size: 1rem;
+		}
+
+		.success-message {
+			padding: 30px 20px;
+			margin: 0 20px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.contact-section {
+			padding: 30px 10px 20px;
+		}
+
+		.section-title {
+			font-size: 1.8rem;
+		}
+
+		.cosmic-form {
+			padding: 20px 15px;
+		}
+
+		.info-card {
+			padding: 15px;
+			gap: 15px;
+		}
+
+		.info-icon {
+			width: 40px;
+			height: 40px;
+			font-size: 1.2rem;
+		}
+
+		.whatsapp-btn {
+			padding: 6px 12px;
+			font-size: 0.8rem;
+		}
+
+		.input-container input,
+		.input-container textarea {
+			padding: 10px 12px;
+			font-size: 0.85rem;
+		}
+
+		.submit-btn {
+			padding: 12px;
+			font-size: 0.9rem;
+		}
+
+		.success-message {
+			padding: 25px 15px;
+			margin: 0 10px;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const form = document.getElementById('contactForm');
+		const submitBtn = form?.querySelector('.submit-btn');
+		const successMessage = document.getElementById('successMessage');
+
+		if (form && submitBtn && successMessage) {
+			form.addEventListener('submit', function(e) {
+				e.preventDefault();
+				
+				submitBtn.classList.add('clicked');
+				
+				setTimeout(() => {
+					successMessage.classList.add('show');
+					form.reset();
+					
+					setTimeout(() => {
+						successMessage.classList.remove('show');
+						submitBtn.classList.remove('clicked');
+					}, 3000);
+				}, 500);
+			});
+		}
+	});
+</script>
